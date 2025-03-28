@@ -38,7 +38,7 @@ function ArticleByID(){
 
         articleAfterChanges.dateOfModification=currentDate.getDate()+"-"+currentDate.getMonth()+"-"+currentDate.getFullYear()
 
-        let res=await axios.put(`http://localhost:3000/author-api/article/${articleAfterChanges.articleId}`,articleAfterChanges,
+        let res=await axios.put(`https://blogapp-s0ik.onrender.com/author-api/article/${articleAfterChanges.articleId}`,articleAfterChanges,
           {
             headers:{
               Authorization:`Bearer ${token}`
@@ -55,7 +55,7 @@ function ArticleByID(){
 
 async function deleteArticle(){
      state.isArticleActive=false;
-     let res=await axios.put(`http://localhost:3000/author-api/articles/${state.articleId}`,state)
+     let res=await axios.put(`https://blogapp-s0ik.onrender.com/author-api/articles/${state.articleId}`,state)
      if(res.data.message==='article deleted or restored'){
       setCurrentArticle(res.data.payLoad)
      }
@@ -64,7 +64,7 @@ async function deleteArticle(){
 
 async function restoreArticle(){
   state.isArticleActive=true;
-  let res=await axios.put(`http://localhost:3000/author-api/articles/${state.articleId}`,state)
+  let res=await axios.put(`https://blogapp-s0ik.onrender.com/author-api/articles/${state.articleId}`,state)
 
   if (res.data.message==='article deleted or restored'){
                setCurrentArticle(res.data.payLoad)
@@ -77,7 +77,7 @@ async function restoreArticle(){
 async function addComment(commentObj){
      commentObj.nameOfUser=currentUser.firstName;
      console.log(commentObj)
-     let res=axios.put(`http://localhost:3000/user-api/comment/${currentArticle.articleId}`,commentObj)
+     let res=axios.put(`https://blogapp-s0ik.onrender.com/user-api/comment/${currentArticle.articleId}`,commentObj)
      if (res.data.message==='comment added'){
             setCommentStatus(res.data.message)
      }
