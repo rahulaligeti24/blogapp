@@ -16,7 +16,7 @@ function Articles() {
 
 
              const token=await  getToken()
-              let res=await axios.get('http://localhost:3000/author-api/articles',{
+              let res=await axios.get('https://blogapp-s0ik.onrender.com/author-api/articles',{
                 headers:{
                   Authorization:`Bearer ${token}`
                 }
