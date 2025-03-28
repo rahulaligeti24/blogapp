@@ -24,7 +24,7 @@ function Home() {
     let res = null;
     try{
     if (selectedRole === 'author') {
-      res = await axios.post('http://localhost:3000/author-api/author', currentUser)
+      res = await axios.post('https://blogapp-s0ik.onrender.com/author-api/author', currentUser)
       let { message, payload } = res.data;
       //console.log(message,payload)
       if (message === 'author') {
@@ -41,7 +41,7 @@ function Home() {
       }
     }
     if (selectedRole === 'user') {
-      res = await axios.post('http://localhost:3000/user-api/user', currentUser)
+      res = await axios.post('https://blogapp-s0ik.onrender.com/user-api/user', currentUser)
       let { message, payload } = res.data;
       console.log(message)
       if (message === 'user') {
