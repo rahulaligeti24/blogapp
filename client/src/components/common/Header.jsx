@@ -31,7 +31,7 @@ const Header = () => {
       <nav className="header   d-flex justify-content-between align-content-center py-3">
         <div className="d-flex justify-content-center">
           <Link href="/">
-            <img src={logo} alt="" width="60px" className="ms-4" />
+            Logo
           </Link>
         </div>
         <ul className="text-white d-flex justify-content-center  list-unstyled">
